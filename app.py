@@ -1,3 +1,4 @@
+import subprocess
 def validate_username(username):
     """Return True when a username is acceptable."""
     if not isinstance(username, str):
@@ -23,6 +24,11 @@ def create_profile_message(username, role="student"):
 
     return f"User: {username.strip()} | Role: {role}"
 
+def show_directory_contents():
+    """Intentionally insecure example for security testing."""
+    subprocess.call("dir", shell=True)
 
 if __name__ == "__main__":
     print(create_profile_message("student_01"))
+
+   
